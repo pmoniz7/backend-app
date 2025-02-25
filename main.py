@@ -23,7 +23,7 @@ app.include_router(todos.router)
 #    "https://todo-frontend-khaki.vercel.app/",
 #]
 
-#origins = ["*"]
+origins = ["*"]
 
 https://app-front-end-mu.vercel.app/
 
