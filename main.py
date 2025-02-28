@@ -19,9 +19,9 @@ app.include_router(todos.router)
 
 
 #origins = [
-#    "http://localhost:3000",
+   #"http://localhost:3000",
    #"https://todo-frontend-khaki.vercel.app/",  
-    "https://frontend-app-two-phi.vercel.app/",
+   # "https://frontend-app-two-phi.vercel.app/",
 #]
 
 origins = ["*"]
