@@ -18,13 +18,12 @@ app = FastAPI()
 app.include_router(todos.router)
 
 
-#origins = [
-   #"http://localhost:3000",
-   #"https://todo-frontend-khaki.vercel.app/",  
-   # "https://frontend-app-two-phi.vercel.app/",
-#]
+origins = [
+   "http://localhost:3000",
+   "https://frontend-app-two-phi.vercel.app/",
+]
 
-origins = ["*"]
+###origins = ["*"]
 
 
 
@@ -44,23 +43,19 @@ async def http_exception_handler(request, exc):
     print(f"{repr(exc)}")
     return PlainTextResponse(str(exc.detail), status_code=exc.status_code)
 
-#print("*****passou global http*****")
 
 # to use the settings
 @lru_cache()
 def get_settings():
     return config.Settings()
 
-#print("*****lru_cache*****")
 
 @app.get("/")
 def read_root(settings: config.Settings = Depends(get_settings)):
-    print("%%%%% the app_name configuration %%%%%%")
-    #print(settings.app_name)
+    print("<<< % % % % %   the app_name configuration   % % % % % % >>>")
+    print(settings.app_name)
     print(settings.APP_NAME)
     return "Hello World" 
-
-#print("%%%%% PASSEI PRA GERAL %%%%%") 
 
 
 @app.get("/items/{item_id}")
