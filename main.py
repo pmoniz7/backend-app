@@ -55,9 +55,11 @@ def read_root(settings: config.Settings = Depends(get_settings)):
     print("<<< % % % % %   the app_name configuration   % % % % % % >>>")
     #print(settings.app_name)
     print(settings.APP_NAME)
+    print("%%%% HELLO WORLD %%%%")
     return "Hello World" 
 
 
 @app.get("/items/{item_id}")
 def read_item(item_id: int, q: Union[str, None] = None):
+    print("%%%%% SEGUINTE %%%%%")
     return {"item_id": item_id, "q": q}
